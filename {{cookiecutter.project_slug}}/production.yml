@@ -30,22 +30,6 @@ services:
     env_file:
       - ./.envs/.production/.postgres
 
-  traefik:
-    build:
-      context: .
-      dockerfile: ./compose/production/traefik/Dockerfile
-    image: {{ cookiecutter.project_slug }}_production_traefik
-    depends_on:
-      - django
-    volumes:
-      - production_traefik:/etc/traefik/acme:z
-    ports:
-      - "0.0.0.0:80:80"
-      - "0.0.0.0:443:443"
-      {%- if cookiecutter.use_celery == 'y' %}
-      - "0.0.0.0:5555:5555"
-      {%- endif %}
-
   redis:
     image: redis:5.0
   {%- if cookiecutter.use_celery == 'y' %}
@@ -67,13 +51,3 @@ services:
 
   {%- endif %}
 
-  {% if cookiecutter.cloud_provider == 'AWS' %}
-  awscli:
-    build:
-      context: .
-      dockerfile: ./compose/production/aws/Dockerfile
-    env_file:
-      - ./.envs/.production/.django
-    volumes:
-      - production_postgres_data_backups:/backups:z
-  {%- endif %}

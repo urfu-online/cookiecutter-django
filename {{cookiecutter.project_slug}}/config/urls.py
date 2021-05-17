@@ -23,6 +23,25 @@ urlpatterns = [
     path("accounts/", include("allauth.urls")),
     # Your stuff: custom urls includes go here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if 'silk' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path('silk/', include('silk.urls', namespace='silk'))
+    ]
+
+if "admin_export_action" in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path('export_action/', include("admin_export_action.urls", namespace="admin_export_action")),
+    ]
+
+if "data_wizard" in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path('datawizard/', include('data_wizard.urls')),
+    ]
+
+if "postgres_metrics.apps.PostgresMetrics" in settings.INSTALLED_APPS:
+    urlpatterns += path('admin/postgres-metrics/', include('postgres_metrics.urls')),
+
 {%- if cookiecutter.use_async == 'y' %}
 if settings.DEBUG:
     # Static file serving when using Gunicorn + Uvicorn for local web socket development
@@ -39,8 +58,6 @@ urlpatterns += [
 {%- endif %}
 
 if settings.DEBUG:
-    # This allows the error pages to be debugged during development, just visit
-    # these url in browser to see how these error pages look like.
     urlpatterns += [
         path(
             "400/",

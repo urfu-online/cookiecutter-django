@@ -1,5 +1,5 @@
 from django.contrib.auth.models import AbstractUser
-from django.db.models import CharField
+from django.db.models import CharField, ImageField, DateTimeField
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
@@ -7,8 +7,16 @@ from django.utils.translation import gettext_lazy as _
 class User(AbstractUser):
     """Default user for {{cookiecutter.project_name}}."""
 
-    #: First and last name do not cover name patterns around the globe
-    name = CharField(_("Name of User"), blank=True, max_length=255)
+    first_name = CharField("Имя", max_length=45, null=True, blank=True)
+    last_name = CharField("Фамилия", max_length=100, null=True, blank=True)
+    middle_name = CharField("Отчество", max_length=100, null=True, blank=True)
+    location = CharField("Адрес проживания", max_length=150, null=True, blank=True)
+    date_birthday = DateTimeField("Дата рождения", null=True, blank=True)
+    city = CharField("Город", max_length=100, null=True, blank=True)
+    country = CharField("Страна", max_length=100, null=True, blank=True)
+
+    avatar = ImageField("Изображение профиля", upload_to="upload/images/", null=True, blank=True)
+
 
     def get_absolute_url(self):
         """Get url for user's detail view.
