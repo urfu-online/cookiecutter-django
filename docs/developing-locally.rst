@@ -9,7 +9,7 @@ Setting Up Development Environment
 
 Make sure to have the following on your host:
 
-* Python 3.8
+* Python 3.9
 * PostgreSQL_.
 * Redis_, if using Celery
 * Cookiecutter_
@@ -18,7 +18,7 @@ First things first.
 
 #. Create a virtualenv: ::
 
-    $ python3.8 -m venv <virtual env path>
+    $ python3.9 -m venv <virtual env path>
 
 #. Activate the virtualenv you have just created: ::
 
@@ -143,6 +143,10 @@ when developing locally. If you have the appropriate setup on your local machine
 in ``config/settings/local.py``::
 
     CELERY_TASK_ALWAYS_EAGER = False
+    
+To run Celery locally, make sure redis-server is installed (instructions are available at https://redis.io/topics/quickstart), run the server in one terminal with `redis-server`, and then start celery in another terminal with the following command::
+    
+    celery -A config.celery_app worker --loglevel=info
 
 
 Sass Compilation & Live Reloading

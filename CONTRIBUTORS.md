@@ -867,6 +867,13 @@ Listed in alphabetical order.
     <td>afrowave</td>
   </tr>
   <tr>
+    <td>John</td>
+    <td>
+      <a href="https://github.com/thorrak">thorrak</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>John Cass</td>
     <td>
       <a href="https://github.com/jcass77">jcass77</a>
@@ -968,6 +975,13 @@ Listed in alphabetical order.
     <td>Krzysztof Żuraw</td>
     <td>
       <a href="https://github.com/krzysztofzuraw">krzysztofzuraw</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>lcd1232</td>
+    <td>
+      <a href="https://github.com/lcd1232">lcd1232</a>
     </td>
     <td></td>
   </tr>
@@ -1217,6 +1231,13 @@ Listed in alphabetical order.
     <td></td>
   </tr>
   <tr>
+    <td>PJ Hoberman</td>
+    <td>
+      <a href="https://github.com/pjhoberman">pjhoberman</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>Raony Guimarães Corrêa</td>
     <td>
       <a href="https://github.com/raonyguimaraes">raonyguimaraes</a>
@@ -1343,6 +1364,13 @@ Listed in alphabetical order.
     <td></td>
   </tr>
   <tr>
+    <td>Tames McTigue</td>
+    <td>
+      <a href="https://github.com/Tamerz">Tamerz</a>
+    </td>
+    <td></td>
+  </tr>
+  <tr>
     <td>Tano Abeleyra</td>
     <td>
       <a href="https://github.com/tanoabeleyra">tanoabeleyra</a>
@@ -1418,6 +1446,13 @@ Listed in alphabetical order.
       <a href="https://github.com/Egregors">Egregors</a>
     </td>
     <td>egregors</td>
+  </tr>
+  <tr>
+    <td>vascop</td>
+    <td>
+      <a href="https://github.com/vascop">vascop</a>
+    </td>
+    <td></td>
   </tr>
   <tr>
     <td>Vicente G. Reyes</td>
